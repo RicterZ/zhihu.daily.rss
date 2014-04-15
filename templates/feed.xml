@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>知乎日报</title>
+<subtitle>满足你的好奇心</subtitle>
+<updated>{{ data['date'] }}</updated>
+<author>
+    <name>zhihu.com</name>
+</author>
+<link href="http://daily.zhihu.com" />
+<id>http://daily.zhihu.com</id>
+
+{% for new in data['news'] %}
+<entry>
+  <title>{{ new['title'] }}</title>
+  <link>{{ new['url'] }}</link>
+  <id>{{ new['url'] }}</id>
+  <published>{{ data['date'] }}</published>
+  <content type="html"><![CDATA[{{ new['content'] | safe }}]]></content>
+</entry>
+{% endfor %}
+</feed>
