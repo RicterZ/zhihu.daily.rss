@@ -19,7 +19,7 @@ def parser_zhihu():
 
 def request(url):
     """Resuest urls with headers"""
-    headers = {'User-Agent': 'ZhihuSB/250.0'}
+    headers = {'User-Agent': 'ZhihuNotMoe/2333'}
     request = urllib2.Request(url, headers=headers)
     return json.loads(urllib2.urlopen(request, timeout=30).read())
 
