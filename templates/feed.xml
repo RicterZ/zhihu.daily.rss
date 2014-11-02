@@ -12,8 +12,8 @@
 {% for new in data['news'] %}
 <entry>
   <title>{{ new['title'] }}</title>
-  <link>{{ new['url'] }}</link>
-  <id>{{ new['url'] }}</id>
+  <link>http://daily.zhihu.com/story/{{ new['url'].split('/')[-1] }}</link>
+  <id>http://daily.zhihu.com/story/{{ new['url'].split('/')[-1] }}</id>
   <published>{{ data['date'] }}</published>
   <content type="html"><![CDATA[{{ new['content'] | safe }}]]></content>
 </entry>
